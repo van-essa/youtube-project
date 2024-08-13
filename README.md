@@ -6,7 +6,7 @@
 
 In this project, we aim to securely manage, streamline, and perform comprehensive analysis on structured and semi-structured YouTube video data, focusing on video categories and trending metrics. The project involves building a scalable ETL pipeline using various AWS services to transform and analyze data, ultimately creating a dashboard for insightful visualizations. 
 
-**[View the final dashboard here](https://eu-north-1.quicksight.aws.amazon.com/sn/embed/share/accounts/017820663920/dashboards/d6dfb408-c9b4-4d49-98e3-905ca955abb2?directory_alias=vanessandersson).**
+**[View the final dashboard here](https://eu-north-1.quicksight.aws.amazon.com/sn/embed/share/accounts/017820663920/dashboards/d6dfb408-c9b4-4d49-98e3-905ca955abb2?directory_alias=vanessandersson)**
 
 ### Embedding the Dashboard in HTML
 
