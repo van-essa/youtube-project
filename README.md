@@ -1,7 +1,7 @@
 # End to End Data Engineer Project - AWS
 
 **Project Overview:**
-In this project, we aim to securely manage, streamline, and perform comprehensive analysis on structured and semi-structured YouTube video data, focusing on video categories and trending metrics. The project involves building a scalable ETL pipeline using various AWS services to transform and analyze data, ultimately creating a dashboard for insightful visualizations.
+In this project, we aim to securely manage, streamline, and perform comprehensive analysis on structured and semi-structured YouTube video data, focusing on video categories and trending metrics. The project involves building a scalable ETL pipeline using various AWS services to transform and analyze data, ultimately creating a dashboard for insightful visualizations. View the final dashboard here.
 
 ### **Architecture:**
 The architecture involves multiple steps, beginning with the ingestion of raw data into an AWS S3 bucket. The data undergoes various transformations using AWS Glue ETL and AWS Lambda, converting it into a structured parquet format. The transformed data is then stored in a separate S3 bucket. Subsequently, two tables—created from JSON and CSV data—are joined to form the final dataset, which is visualized using AWS QuickSight. This architecture ensures a robust, scalable, and efficient data pipeline.
