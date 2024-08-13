@@ -27,7 +27,13 @@ The dataset used is from Kaggle, which includes statistics on daily popular YouT
 
 ### **Project Implementation:**
 1. **Setting Up AWS IAM and CLI:** Create an IAM user with necessary permissions and set up AWS CLI for interaction with AWS services.
+![image](https://github.com/user-attachments/assets/5566d13a-ef08-408b-90f3-54bae56f0b40)
+
 2. **Data Upload to S3:** Upload the Kaggle dataset to an S3 bucket, organizing it by region and format.
+![image](https://github.com/user-attachments/assets/78142865-5407-46ea-99af-35883c73dc6f)
+![image](https://github.com/user-attachments/assets/4c1574f0-4f7e-4a6f-85dd-e28fc3339650)
+![image](https://github.com/user-attachments/assets/47c5e68e-531e-4b33-99f0-8533594caca8)
+
 3. **Data Transformation:**
    - **AWS Glue Crawler:** Create a schema for JSON data using AWS Glue Crawler.
    - **AWS Lambda:** Convert JSON data into parquet format using AWS Lambda, handling nested arrays and complex data structures.
