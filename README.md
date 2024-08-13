@@ -1,5 +1,5 @@
 # End to End Data Engineer Project - AWS
-![image](https://github.com/user-attachments/assets/d66cfb32-3428-4577-b70c-610acf255cc9)
+![image](https://github.com/user-attachments/assets/d99f8fda-36e4-4809-b9fd-b8ec5504cf11)
 
 
 **Project Overview:**
@@ -57,6 +57,7 @@ The dataset used is from Kaggle, which includes statistics on daily popular YouT
 5. **Automation:** Set up triggers in AWS Lambda to automatically process new data as it arrives in S3.
 6. **Final Data Preparation:** Join cleaned datasets using AWS Glue ETL to create a comprehensive analytics table.
 7. **Data Visualization:** Import the final dataset into AWS QuickSight and create dashboards for visual analysis.
+![image](https://github.com/user-attachments/assets/d66cfb32-3428-4577-b70c-610acf255cc9)
 
 ### **Final Outcome:**
 Through this project, we successfully created a scalable and efficient ETL pipeline that ingests, processes, and analyzes YouTube video data. The final output is a set of insightful visualizations in AWS QuickSight, providing valuable metrics on video popularity and trends. This project showcases the effective use of AWS services to manage and analyze large-scale data, enabling data-driven decision-making. **[Check out the Data Ops for looking at the tickets for this project](https://github.com/users/van-essa/projects/3/views/1).**
