@@ -45,3 +45,59 @@ The dataset used is from Kaggle, which includes statistics on daily popular YouT
 
 ### **Final Outcome:**
 Through this project, we successfully created a scalable and efficient ETL pipeline that ingests, processes, and analyzes YouTube video data. The final output is a set of insightful visualizations in AWS QuickSight, providing valuable metrics on video popularity and trends. This project showcases the effective use of AWS services to manage and analyze large-scale data, enabling data-driven decision-making.
+
+---
+### **Bug Report: `No module named 'awswrangler'` Error in AWS Lambda**
+
+#### **Issue Summary**
+After updating the Python runtime version of an AWS Lambda function from Python 3.8 to Python 3.12, an error occurred when invoking the function:
+```
+"errorMessage": "Unable to import module 'lambda_function': No module named 'awswrangler'"
+```
+This error was unexpected since the `awswrangler` module had been installed and added as a layer to the Lambda function.
+
+#### **Root Cause Analysis**
+The issue was due to the Lambda function being unable to locate the `awswrangler` module in the specified layer. The following potential causes were identified:
+
+1. **Layer Configuration**: The layer might not have been properly attached to the Lambda function.
+2. **Python Version Compatibility**: The `awswrangler` module or its version might not have been compatible with Python 3.12.
+3. **Packaging Issues**: There could have been an issue with how the `awswrangler` module was packaged in the layer, leading to an incorrect directory structure.
+
+#### **Steps to Resolve**
+
+1. **Verify Layer Attachment**:
+   - Checked the Lambda function's configuration to ensure the layer containing `awswrangler` was properly attached.
+   - Confirmed that the correct layer was listed under the "Layers" section of the function's configuration.
+
+2. **Check Layer Content and Structure**:
+   - Verified that the layer was packaged correctly and contained the `awswrangler` module in the appropriate directory structure:
+     ```
+     layer.zip
+     └── python
+         ├── awswrangler
+         └── ...
+     ```
+
+   - If the layer was not correctly structured, it was repackaged using the following steps:
+     ```bash
+     mkdir python
+     pip install awswrangler -t python/
+     zip -r layer.zip python
+     ```
+   - Uploaded the repackaged `layer.zip` as a new Lambda layer.
+
+3. **Ensure Python 3.12 Compatibility**:
+   - Verified that the installed version of `awswrangler` was compatible with Python 3.12. If necessary, installed a version of `awswrangler` that is known to work with Python 3.12.
+
+4. **Detach and Reattach the Layer**:
+   - Detached the layer from the Lambda function and saved the configuration.
+   - Reattached the layer to ensure it was correctly recognized by the Lambda runtime.
+
+5. **Test Locally**:
+   - Tested the Lambda function code locally using Python 3.12 to ensure that the `awswrangler` module was functioning as expected.
+
+6. **Re-deploy and Verify**:
+   - After making these changes, redeployed the Lambda function and verified that the error was resolved.
+
+#### **Conclusion**
+The issue was resolved by verifying the layer's attachment, ensuring the correct packaging of the `awswrangler` module, and confirming compatibility with Python 3.12. After reattaching the layer and redeploying the function, the Lambda function successfully imported the `awswrangler` module and executed without errors.
