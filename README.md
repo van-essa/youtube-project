@@ -2,12 +2,12 @@
 ![image](https://github.com/user-attachments/assets/d99f8fda-36e4-4809-b9fd-b8ec5504cf11)
 
 
-**Project Overview:**
+### Project Overview:
 
 In this project, we aim to securely manage, streamline, and perform comprehensive analysis on structured and semi-structured YouTube video data, focusing on video categories and trending metrics. The project involves building a scalable ETL pipeline using various AWS services to transform and analyze data, ultimately creating a dashboard for insightful visualizations. 
 
 **[View the final dashboard here](https://eu-north-1.quicksight.aws.amazon.com/sn/embed/share/accounts/017820663920/dashboards/d6dfb408-c9b4-4d49-98e3-905ca955abb2?directory_alias=vanessandersson)**
-
+---
 ### Embedding the Dashboard in HTML
 
 To view the dashboard directly on a webpage, you can use the following embedded code:
@@ -17,10 +17,10 @@ To view the dashboard directly on a webpage, you can use the following embedded 
     height="720"
     src="https://eu-north-1.quicksight.aws.amazon.com/sn/embed/share/accounts/017820663920/dashboards/d6dfb408-c9b4-4d49-98e3-905ca955abb2?directory_alias=vanessandersson">
 </iframe>
-
+---
 ### **Architecture:**
 The architecture involves multiple steps, beginning with the ingestion of raw data into an AWS S3 bucket. The data undergoes various transformations using AWS Glue ETL and AWS Lambda, converting it into a structured parquet format. The transformed data is then stored in a separate S3 bucket. Subsequently, two tables—created from JSON and CSV data—are joined to form the final dataset, which is visualized using AWS QuickSight. This architecture ensures a robust, scalable, and efficient data pipeline.
-
+---
 ### **Project Goals:**
 1. **Data Ingestion:** Develop a mechanism to ingest and store data from different sources into AWS S3.
 2. **ETL System:** Implement an ETL pipeline to clean, transform, and structure the raw data.
@@ -28,7 +28,7 @@ The architecture involves multiple steps, beginning with the ingestion of raw da
 4. **Scalability:** Ensure the system can scale efficiently as the data volume increases.
 5. **Cloud Utilization:** Leverage AWS cloud services for processing large datasets that exceed local computing capabilities.
 6. **Reporting:** Build a dashboard using AWS QuickSight to visualize key insights and metrics derived from the data.
-
+---
 ### **Technologies Used:**
 - **Amazon S3:** Object storage service used for storing raw and processed data.
 - **AWS IAM:** Manages user identities and access to AWS resources.
@@ -36,10 +36,10 @@ The architecture involves multiple steps, beginning with the ingestion of raw da
 - **AWS Lambda:** Serverless computing service for running code in response to events, used for data transformation.
 - **AWS Athena:** Interactive query service for analyzing data stored in S3 using standard SQL.
 - **AWS QuickSight:** Business intelligence (BI) service used to create visualizations and dashboards.
-
+---
 ### **Dataset Used:**
 The dataset used is from Kaggle, which includes statistics on daily popular YouTube videos across various regions. The data comprises video titles, channel names, publication times, views, likes, comments, and other relevant metrics, along with a `category_id` field linked to JSON files for each region.
-
+---
 ### **Project Implementation:**
 1. **Setting Up AWS IAM and CLI:** Create an IAM user with necessary permissions and set up AWS CLI for interaction with AWS services.
 ![image](https://github.com/user-attachments/assets/5566d13a-ef08-408b-90f3-54bae56f0b40)
@@ -58,7 +58,7 @@ The dataset used is from Kaggle, which includes statistics on daily popular YouT
 6. **Final Data Preparation:** Join cleaned datasets using AWS Glue ETL to create a comprehensive analytics table.
 7. **Data Visualization:** Import the final dataset into AWS QuickSight and create dashboards for visual analysis.
 ![image](https://github.com/user-attachments/assets/d66cfb32-3428-4577-b70c-610acf255cc9)
-
+---
 ### **Final Outcome:**
 Through this project, we successfully created a scalable and efficient ETL pipeline that ingests, processes, and analyzes YouTube video data. The final output is a set of insightful visualizations in AWS QuickSight, providing valuable metrics on video popularity and trends. This project showcases the effective use of AWS services to manage and analyze large-scale data, enabling data-driven decision-making. **[Check out the Data Ops for looking at the tickets for this project](https://github.com/users/van-essa/projects/3/views/1).**
 
@@ -118,3 +118,13 @@ The issue was due to the Lambda function being unable to locate the `awswrangler
 
 #### **Conclusion**
 The issue was resolved by verifying the layer's attachment, ensuring the correct packaging of the `awswrangler` module, and confirming compatibility with Python 3.12. After reattaching the layer and redeploying the function, the Lambda function successfully imported the `awswrangler` module and executed without errors.
+
+---
+## Credits 
+
+Throughout the process of building this end-to-end data engineering project, I followed a YouTube tutorial that helped me gain a deeper understanding of AWS services and how an end-to-end data engineering project works within the AWS ecosystem.
+
+### Online resources
+* Darshil Parmar's YouTube Data Analysis Video | [END TO END DATA ENGINEERING](https://www.youtube.com/watch?v=yZKJFKu49Dk)
+* [Kaggle](https://www.kaggle.com/datasets/datasnaek/youtube-new) provided the dataset used in this project 
+* Ishaan Rawat's blog post on the Medium online source regarding [Data Engineering Project using AWS Lambda, Glue, Athena and QuickSight](https://medium.com/@ishaan.rawat611/data-engineering-project-using-aws-lambda-glue-athena-and-quicksight-5b9241c8510a)
